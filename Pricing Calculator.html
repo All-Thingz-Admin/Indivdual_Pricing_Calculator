@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Thingz Admin Pricing Calculator</title>
+    <style>
+        body {
+            background-color: #4169E1;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container img {
+            max-width: 200px;
+            margin: 10px;
+        }
+        
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1, h2 {
+            color: #E8B4B8;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #E8B4B8;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background: #E8B4B8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        button:hover {
+            background: #d39aa1;
+        }
+        
+        #results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #E8B4B8;
+            color: white;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="All Thingz Admin (Logo) (5).png" alt="Thingz Admin Logo">
+    </div>
+
+    <div class="calculator">
+        <h1>All Thingz Admin</h1>
+        <h2>Service~Based Pricing Calculator</h2>
+        
+        <div class="input-group">
+            <label>Monthly Business Tools ($)</label>
+            <input type="number" id="businessTools" placeholder="Enter amount">
+        </div>
+        
+        <div class="input-group">
+            <label>Monthly Living Expenses ($)</label>
+            <input type="number" id="livingExpenses" placeholder="Enter amount">
+        </div>
+        
+        <div class="input-group">
+            <label>Monthly Savings Goal ($)</label>
+            <input type="number" id="savings" placeholder="Enter amount">
+        </div>
+        
+        <div class="input-group">
+            <label>Hours Available Per Month</label>
+            <input type="number" id="hours" placeholder="Enter hours">
+        </div>
+        
+        <div class="input-group">
+            <label>Tax Rate (%)</label>
+            <input type="number" id="taxRate" placeholder="Enter percentage">
+        </div>
+        
+        <button onclick="calculate()">Calculate Pricing</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
